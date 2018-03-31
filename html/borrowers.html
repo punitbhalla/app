@@ -1,0 +1,39 @@
+<div>
+    <md-content layout-align="right right" flex layout-padding>
+        <div layout-lg="row" layout-align="right">
+            <div flex layout-align="right right">
+                <md-button class="md-raised md-primary" ng-click = "createBorrower()">Create Borrower</md-button>
+            </div>
+        </div>
+    <md-card style="margin:0px">
+        <md-input-container style="margin:15px;">
+            <label>Filter by search</label>
+            <input type="text" ng-model="borrower">
+        </md-input-container>
+        <div ng-hide="true">
+            {{(filteredItems = (borrowers | filter: borrower))}}
+        </div>
+    </md-card>
+    <mdt-table table-card="{visible: true, title: 'Borrowers'}"
+               mdt-row-paginator-error-message="Error happened during loading nutritions."
+               mdt-row="{data: filteredItems,
+                'table-row-id-key': 'id',
+                      'column-keys': [
+                          'id',
+                          'ssn',
+                          'Name',
+                          'Address',
+                          'Phone'
+                      ]
+                      }" style="max-height: 500px!important;">
+        <mdt-header-row>
+            <mdt-column column-definition="Card Id" align-rule="left"><span>Card Id</span></mdt-column>
+            <mdt-column column-definition="SSN" align-rule="left"><span>Ssn</span></mdt-column>
+            <mdt-column column-definition="Name" align-rule="left"><span>Name</span></mdt-column>
+            <mdt-column column-definition="Address" align-rule="left"><span>Address</span></mdt-column>
+            <mdt-column column-definition="Phone" align-rule="left"><span>Phone</span></mdt-column>
+        </mdt-header-row>
+    </mdt-table>
+
+    </md-content>
+</div>

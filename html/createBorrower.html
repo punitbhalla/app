@@ -1,0 +1,42 @@
+
+<md-dialog aria-label="Create Borrower" >
+    <md-toolbar layout-padding>
+        <div class="md-toolbar-tools">
+            <h2>Create Borrower</h2>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+    <form name="frmborrower" ng-cloak>
+        <md-dialog-content layout-padding>
+            <div class="md-dialog-content">
+                <form name="createBorrowerForm">
+
+                <div layout-gt-sm="row">
+                <md-input-container class="md-block">
+                <label>Social Security Number</label>
+                <input ng-model="user.ssn" required>
+                </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Name</label>
+                        <input ng-model="user.name" required>
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-sm="row">
+                <md-input-container class="md-block">
+                <label>Address</label>
+                <input ng-model="user.address" required>
+                </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Phone</label>
+                        <input ng-model="user.phone" required>
+                    </md-input-container>
+                </div>
+
+                <md-button ng-disabled="frmborrower.$invalid" class="md-raised md-primary" ng-click="submit()">Submit</md-button>
+                <md-button class="md-raised" ng-click="cancel()">Cancel</md-button>
+                </form>
+            </div>
+        </md-dialog-content>
+    </form>
+</md-dialog>

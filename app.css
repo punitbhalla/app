@@ -1,0 +1,15 @@
+/* app css stylesheet */
+.navBardemoBasicUsage md-content .ext-content {
+  padding: 50px;
+  margin: 20px;
+  color:white; }
+
+
+
+md-nav-bar md-nav-item {
+  color: #f1fdff;
+}
+
+md-nav-bar md-nav-item :after{
+  color: #ffffff;
+}

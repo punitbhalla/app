@@ -1,0 +1,34 @@
+<div>
+
+    <md-card style="margin:0px">
+        <md-input-container style="margin:15px;">
+            <label>Filter by search</label>
+            <input type="text" ng-model="filterText" ng-keypress = "searchBook($event)">
+        </md-input-container>
+    </md-card>
+    <mdt-table table-card="{visible: true, title: 'Books'}"
+               selectable-rows = "true"
+               mdt-row-paginator-error-message="Error happened during loading nutritions."
+               selected-row-callback="showPrompt(rows)"
+               mdt-row="{data: bookList,
+                'table-row-id-key': 'id',
+                      'column-keys': [
+                          'Isbn',
+                          'Title',
+                          'Authors',
+                          'Availibility'
+                      ]
+                      }">
+        <mdt-header-row>
+            <mdt-column column-definition="Isbn" align-rule="left"><span>Isbn</span></mdt-column>
+            <mdt-column column-definition="Title" align-rule="left"><span>Title</span></mdt-column>
+            <mdt-column column-definition="Authors" align-rule="left"><span>Authors</span></mdt-column>
+            <mdt-column column-definition="Availability" align-rule="left"><span>Availability</span></mdt-column>
+        </mdt-header-row>
+    </mdt-table>
+
+</div>
+
+<!--paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,50]}"-->
+<!--mdt-row-paginator="paginatorCallback(page, pageSize)"-->
+<!--mdt-trigger-request="getLoadResultsCallback(loadPageCallback)"-->

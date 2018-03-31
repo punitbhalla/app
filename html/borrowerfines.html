@@ -1,0 +1,35 @@
+
+<md-dialog aria-label="Create Borrower" >
+    <md-toolbar layout-padding>
+        <div class="md-toolbar-tools">
+            <h2>Details of Fines</h2>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+    <form ng-cloak>
+        <md-dialog-content layout-padding>
+            <div class="md-dialog-content">
+                <mdt-table table-card="{visible: true, title: 'Borrower Fines'}"
+                           mdt-row-paginator-error-message="Error happened during loading Fines."
+                           selectable-rows="true"
+                           selected-row-callback="showPrompt(rows)"
+                           mdt-row="{data: borrowerfineList,
+                'table-row-id-key': 'id',
+                      'column-keys': [
+                          'loanid',
+                          'isbn',
+                          'title',
+                          'amount'
+                      ]
+                      }">
+                    <mdt-header-row>
+                        <mdt-column column-definition="Loan Id" align-rule="left"><span>Loan Id</span></mdt-column>
+                        <mdt-column column-definition="Book Isbn" align-rule="left"><span>Book Isbn</span></mdt-column>
+                        <mdt-column column-definition="Book Name" align-rule="left"><span>Book Name</span></mdt-column>
+                        <mdt-column column-definition="Fine" align-rule="right"><span>Fine</span></mdt-column>
+                    </mdt-header-row>
+                </mdt-table>
+            </div>
+        </md-dialog-content>
+    </form>
+</md-dialog>

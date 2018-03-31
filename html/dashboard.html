@@ -1,0 +1,33 @@
+
+<div style="width: 100%!important;">
+    <md-content class="md-padding" style="color:grey;background-color: #FFFFFF; text-align: center">
+        <h3>Library Management</h3>
+        <md-nav-bar
+                md-no-ink-bar="disableInkBar"
+                md-selected-nav-item="currentNavItem"
+                nav-bar-aria-label="navigation links" >
+            <md-nav-item md-nav-click="goto('dashboard.book')" name="page1">
+                Books
+            </md-nav-item>
+            <md-nav-item md-nav-click="goto('dashboard.borrower')" name="page2">
+                Borrower
+            </md-nav-item>
+            <md-nav-item md-nav-click="goto('dashboard.loan')" name="page3">
+                Loans
+            </md-nav-item>
+            <md-nav-item md-nav-click="goto('dashboard.fines')" name="page4">
+                Fines
+            </md-nav-item>
+            <!-- these require actual routing with ui-router or ng-route, so they
+            won't work in the demo
+            <md-nav-item md-nav-href="#page4" name="page5">Page Four</md-nav-item>
+            <md-nav-item md-nav-sref="app.page5" name="page4">Page Five</md-nav-item>
+            You can also add options for the <code>ui-sref-opts</code> attribute.
+            <md-nav-item md-nav-sref="page6" sref-opts="{reload:true, notify:true}">
+              Page Six
+            </md-nav-item>
+            -->
+        </md-nav-bar>
+    </md-content>
+</div>
+<div ui-view></div>

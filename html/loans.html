@@ -1,0 +1,43 @@
+<div>
+    <md-content flex layout-padding>
+        <md-input-container>
+            <label>Isbn</label>
+            <input ng-model="isbn" ng-keypress = "enterIsbn($event)">
+        </md-input-container>
+        <md-input-container>
+            <label>Card Id</label>
+            <input ng-model="borrowerId" ng-keypress = "enterBorrowerId($event)">
+        </md-input-container>
+        <md-input-container>
+            <label>Borrower Name</label>
+            <input ng-model="nameSubStr" ng-keypress = "enterName($event)">
+        </md-input-container>
+
+        <mdt-table table-card="{visible: true, title: 'Loans'}"
+                   mdt-row-paginator-error-message="Error happened during loading Loans."
+                   selectable-rows="true"
+                   selected-row-callback="checkin(rows)"
+                   mdt-row="{data: loans,
+                'table-row-id-key': 'id',
+                      'column-keys': [
+                          'loanid',
+                          'title',
+                          'card_id',
+                          'borrower_name',
+                          'date_out',
+                          'due_date'
+                      ]
+                      }">
+            <mdt-header-row>
+                <mdt-column column-definition="Loan Id" align-rule="left"><span>Loan Id</span></mdt-column>
+                <mdt-column column-definition="Book Title" align-rule="left"><span>Book Title</span></mdt-column>
+                <mdt-column column-definition="Borrower Id" align-rule="left"><span>Borrower Id</span></mdt-column>
+                <mdt-column column-definition="Borrower Name" align-rule="left"><span>Borrower Name</span></mdt-column>
+                <mdt-column column-definition="Date Out" align-rule="left"><span>Date Out</span></mdt-column>
+                <mdt-column column-definition="Due Date" align-rule="left"><span>Due Date</span></mdt-column>
+            </mdt-header-row>
+        </mdt-table>
+
+
+    </md-content>
+</div>
